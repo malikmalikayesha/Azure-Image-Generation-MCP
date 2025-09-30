@@ -1,0 +1,43 @@
+{
+  "name": "@malikmalikayesha/azure-image-generation-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for Azure AI Image Generation - Create stunning images using Azure DALL-E 3 and FLUX models with intelligent model selection",
+  "main": "azure-image-generation-server.js",
+  "type": "module",
+  "bin": {
+    "azure-image-generation-mcp": "./azure-image-generation-server.js"
+  },
+  "scripts": {
+    "start": "node azure-image-generation-server.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.17.2"
+  },
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "librechat",
+    "azure-ai",
+    "azure-foundry",
+    "image-generation",
+    "dall-e-3",
+    "flux",
+    "ai-images",
+    "text-to-image",
+    "smart-selection"
+  ],
+  "author": "malikmalikayesha",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/malikmalikayesha/azure-image-generation-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/malikmalikayesha/azure-image-generation-mcp/issues"
+  },
+  "homepage": "https://github.com/malikmalikayesha/azure-image-generation-mcp#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

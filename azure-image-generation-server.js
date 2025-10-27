@@ -17,10 +17,14 @@ class AzureImageGenerationMCPServer {
 
         // Azure configuration
         this.azureApiKey = process.env.AZURE_IMAGE_API_KEY;
-        this.azureBaseUrl = process.env.AZURE_IMAGE_BASE_URL || 'https://ajaiafoundry.cognitiveservices.azure.com/openai/deployments';
+        this.azureBaseUrl = process.env.AZURE_IMAGE_BASE_URL;
 
-        if (!this.azureApiKey || !this.azureBaseUrl) {
-            throw new Error('AZURE_IMAGE_API_KEY and AZURE_IMAGE_BASE_URL environment variables are required');
+        if (!this.azureApiKey) {
+            throw new Error('AZURE_IMAGE_API_KEY environment variable is required. Please set it in your .env file or LibreChat configuration.');
+        }
+
+        if (!this.azureBaseUrl) {
+            throw new Error('AZURE_IMAGE_BASE_URL environment variable is required. Please set it to your Azure endpoint (e.g., https://your-resource.openai.azure.com/openai/deployments)');
         }
 
         this.setupToolHandlers();
@@ -129,7 +133,7 @@ class AzureImageGenerationMCPServer {
                 content: [
                     {
                         type: 'text',
-                        text: `🎨 **Your AI-Generated Image is Ready!**\n\n✨ **Created from:** "${prompt}"\n🤖 **AI Model:** ${selectedModel.toUpperCase()} ${selectedModel === 'dall-e-3' ? '(Photorealistic AI)' : '(Creative AI)'}\n📐 **Size:** ${size}\n⏱️ **Generation Time:** ${(totalTime/1000).toFixed(1)}s\n${requestedModel === 'auto' ? `🧠 **Smart Selection:** Chose ${selectedModel.toUpperCase()} based on your prompt\n` : ''}\n🖼️ Your custom image has been generated and is displayed below. Feel free to save, share, or use it however you'd like!`
+                        text: `🎨 **Your AI-Generated Image is Ready!**\n\n✨ **Created from:** "${prompt}"\n🤖 **AI Model:** ${selectedModel.toUpperCase()} ${selectedModel === 'dall-e-3' ? '(Photorealistic AI)' : '(Creative AI)'}\n📐 **Size:** ${size}\n⏱️ **Generation Time:** ${(totalTime / 1000).toFixed(1)}s\n${requestedModel === 'auto' ? `🧠 **Smart Selection:** Chose ${selectedModel.toUpperCase()} based on your prompt\n` : ''}\n🖼️ Your custom image has been generated and is displayed below. Feel free to save, share, or use it however you'd like!`
                     },
                     {
                         type: 'image',
@@ -264,7 +268,7 @@ class AzureImageGenerationMCPServer {
             throw new Error(`Azure FLUX API error: ${response.status} - ${errorText}`);
         }
 
-                const jsonParseStart = Date.now();
+        const jsonParseStart = Date.now();
         const result = await response.json();
         const jsonParseTime = Date.now() - jsonParseStart;
 

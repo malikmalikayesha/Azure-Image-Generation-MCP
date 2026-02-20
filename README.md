@@ -5,6 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js Version](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen)](https://nodejs.org)
 
+<a href="https://glama.ai/mcp/servers/@malikmalikayesha/Azure-Image-Generation-MCP">
+  <img width="380" height="200" src="https://glama.ai/mcp/servers/@malikmalikayesha/Azure-Image-Generation-MCP/badge" alt="Azure Image Generation MCP server" />
+</a>
+
 ## 🎨 Overview
 
 A powerful MCP server that brings professional AI image generation to LibreChat. Generate stunning images using Azure's DALL-E 3 for photorealistic content or FLUX for creative artwork, with intelligent automatic model selection based on your prompts.

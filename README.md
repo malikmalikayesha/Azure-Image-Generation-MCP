@@ -54,7 +54,7 @@ Perfect for LibreChat users who want seamless image generation capabilities powe
 ### Option 1: NPM Installation (Recommended)
 
 ```bash
-npm install -g azure-image-generation-mcp
+npm install -g @malikmalikayesha/azure-image-generation-mcp
 ```
 
 ### Option 2: From Source
@@ -68,7 +68,7 @@ npm install
 ### Option 3: NPX (No Installation)
 
 ```bash
-npx azure-image-generation-mcp
+npx -y @malikmalikayesha/azure-image-generation-mcp
 ```
 
 ## ⚙️ Configuration
